@@ -2,18 +2,9 @@ $(document).ready(function() {
 
 	console.log('script loaded!');
 
-/*		$('.home').on('click',function(e) {
-
-			$('.column-two').toggle();
-			$(this).toggleClass('class1')
-		 });
-		console.log
-
-});*/
 
 	$('.column-one').click(function(){
 		$('.column-two').toggle();
-
 	});
 
 	$('.by-year').click(function(){
@@ -31,34 +22,37 @@ $(document).ready(function() {
 
 
 
-	$('.column-three').click(function(){
-		$('#article').toggle();
-	});
+	// $('.column-three').click(function(){
+	// 	$('#article').toggle();
+	// });
 
-	$('.by-alphabet').click(function(){
-		$('#by-year').hide();
-		$('#by-alphabet').show();
-	});
+	// $('.by-alphabet').click(function(){
+	// 	$('#by-year').hide();
+	// 	$('#by-alphabet').show();
+	// });
 
-	$('#by-year').click(function(){
-		$('#by-alphabet').hide();
-		$('#by-year').show();
-	});
+	// $('.by-year').click(function(){
+	// 	$('#by-alphabet').hide();
+	// 	$('#by-year').show();
+	// });
 
 	
 
 	$('.section').click(function(){
 		let articleKey = $('a', this).attr('id');
-		$('.column-four').show();
-		$('#article').attr('src', articleKey + ".html");
+		// $('.column-four').show();
+		let articleURL = articleKey + ".html";
+		console.log(articleURL);
+		$('#selected-article').load(articleURL + ' #content');
+
 	});
 
 
-	$(document).ready(function(){
-  $("div").on("click", ".section", function(event){
-    $(event.delegateTarget).css(".section:active", "black");
-  });
-});
+// 	$(document).ready(function(){
+//   $("div").on("click", ".section", function(event){
+//     $(event.delegateTarget).css(".section:active", "black");
+//   });
+// });
 
 
 })
